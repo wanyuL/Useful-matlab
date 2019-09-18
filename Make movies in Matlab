@@ -15,8 +15,14 @@ for i = 1:N
     % Store the frame
     M(i)=getframe(gcf); % leaving gcf out crops the frame in the movie.
 end
-% Output the movie as an avi file
-movie2avi(M,'WaveMovie.avi');
+
+% save movie
+mywriter=VideoWriter('my movie','MPEG-4');
+mywriter.FrameRate=3;
+% output movie
+open(mywriter);
+writeVideo(mywriter,M);
+close(mywriter);
 
 %%
 % use imwrite
