@@ -27,3 +27,10 @@ close(mywriter);
 %%
 % use imwrite
 % https://www.mathworks.com/help/matlab/ref/imwrite.html 
+
+
+%% save as tiff stacks
+outputFileName = 'img_stack.tif';
+for K=1:length(img(1, 1, :))
+   imwrite(img(:, :, K), outputFileName, 'WriteMode', 'append','Compression','none');
+end
