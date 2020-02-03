@@ -31,6 +31,7 @@ close(mywriter);
 
 %% save as tiff stacks
 outputFileName = 'img_stack.tif';
-for K=1:length(img(1, 1, :))
-   imwrite(img(:, :, K), outputFileName, 'WriteMode', 'append','Compression','none');
+for K=1:10
+% write some code to plot
+   imwrite(frame2im(getframe(gcf)), outputFileName, 'WriteMode', 'append','Compression','none');
 end
